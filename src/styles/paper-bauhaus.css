@@ -1,0 +1,86 @@
+:root{
+  --paper: #fffaf1;
+  --ink: #0b0b0b;
+  --grid: #1b1b1b18;
+  --tomato: #e53935; /* dominant */
+  --sun: #ffb703; /* accent */
+  --sea: #0081a7; /* accent 2 */
+
+  --radius: 18px;
+}
+
+/* Typography: expressive editorial serif + humanist grotesque */
+@import url('https://fonts.googleapis.com/css2?family=Commissioner:wght@300;400;600;700;800&family=Fraunces:opsz,wght@9..144,400;700;800&display=swap');
+
+html, body, #root { height: 100%; }
+
+body{
+  background: radial-gradient(1200px 600px at 20% 10%, #fff5e1 0%, transparent 60%),
+              radial-gradient(1000px 500px at 90% 80%, #e6f7ff 0%, transparent 60%),
+              linear-gradient(180deg, #fffaf4, #fffaf1);
+  color: var(--ink);
+}
+
+.bg-grid{
+  background-image:
+    linear-gradient(0deg, var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px);
+  background-size: 28px 28px, 28px 28px;
+}
+
+.site-wrap{ 
+  max-width: 1100px; 
+  margin: 0 auto; 
+  padding: 48px 20px; 
+}
+
+/* Display font for titles */
+.font-display{ font-family: 'Fraunces', ui-serif, Georgia, serif; }
+/* Body font */
+:root, body{ font-family: 'Commissioner', ui-sans-serif, system-ui; }
+
+/* Bauhaus-y blocks */
+.shadow-hard{ box-shadow: 8px 8px 0 0 var(--ink); }
+
+.badge{
+  background: var(--sea);
+  color: white;
+  padding: 6px 10px;
+  border-radius: 999px;
+  letter-spacing: .1em;
+}
+
+.tab{
+  border: 2px solid var(--ink);
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: #ffffffa8;
+  transition: transform .15s ease, background .2s ease;
+}
+.tab:hover{ transform: translateY(-1px); }
+.tab-active{ background: var(--sun); }
+
+.btn{
+  border: 2px solid var(--ink);
+  background: #fff;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-weight: 700;
+  transition: transform .15s ease, background .2s ease;
+}
+.btn:hover{ transform: translateY(-1px); }
+.btn-primary{ background: var(--tomato); color: white; border-color: #6d1413; }
+.btn-ghost{ background: #fff; }
+
+.switch{ display: inline-flex; align-items: center; gap: 8px; font-size: 12px; text-transform: uppercase; }
+.switch input{ appearance: none; width: 42px; height: 24px; border:2px solid var(--ink); border-radius: 999px; position: relative; background:#fff; }
+.switch input::after{ content:""; position:absolute; inset:2px auto 2px 2px; width:16px; border-radius:999px; background:var(--tomato); transition:left .2s ease, background .2s ease; height:16px; }
+.switch input:checked::after{ left: 22px; background: var(--sea); }
+.switch span{ opacity:.7; letter-spacing:.15em; }
+
+.num{ display:inline-flex; align-items:center; gap:10px; }
+.num button{ width:30px; height:30px; border-radius:8px; border:2px solid var(--ink); font-weight:800; background:#fff; line-height:1; }
+.num span{ display:inline-block; min-width: 24px; text-align:center; font-weight:700; }
+
+/* Drippy drop highlight */
+.drop{ filter: drop-shadow(0 20px 0 #00000010); }
